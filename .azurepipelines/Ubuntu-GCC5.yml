@@ -12,7 +12,7 @@ resources:
       type: github
       endpoint: makubacki
       name: makubacki/mu_devops
-      ref: add_pkg_cnt_to_prgate_steps
+      ref: add_pr_eval_param
 
 trigger:
 - main
