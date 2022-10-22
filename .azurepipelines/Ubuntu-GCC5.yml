@@ -10,14 +10,13 @@ resources:
   repositories:
     - repository: mu_devops
       type: github
-      endpoint: microsoft
-      name: microsoft/mu_devops
-      ref: main
+      endpoint: makubacki
+      name: makubacki/mu_devops
+      ref: remove_variable_job_name
 
 variables:
 - group: architectures-arm64-x86-64
 - group: tool-chain-ubuntu-gcc
-- group: container-fedora-latest
 
 jobs:
 - template: Jobs/PrGate.yml@mu_devops
@@ -29,5 +28,5 @@ jobs:
     target_list: DEBUG,RELEASE,NO-TARGET,NOOPT
     tool_chain_tag: $(tool_chain_tag)
     vm_image: $(vm_image)
-    container_image: $(container_image)
+    container_image: ghcr.io/tianocore/containers/fedora-35-build:latest
     install_tools: false
